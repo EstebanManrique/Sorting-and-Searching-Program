@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Sorting_Set_Numbers</class>
+ <widget class="QMainWindow" name="Sorting_Set_Numbers">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1102</width>
+    <height>770</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sorting/Searching Algorithms</string>
+  </property>
+  <widget class="QWidget" name="SortingNumbersWindow">
+   <widget class="QLabel" name="GraphSpace">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>408</y>
+      <width>1096</width>
+      <height>320</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SortingWindowTitle">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>20</y>
+      <width>501</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Sorting a random Set of Numbers</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AlgorithmSelectionText">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>100</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Algorithm to be executed:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="NumberSelectionText">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>175</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Amount of numbers:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DuplicateAllowanceText">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>250</y>
+      <width>251</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Allow duplicate numbers: </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ExecuteButton">
+    <property name="geometry">
+     <rect>
+      <x>426</x>
+      <y>325</y>
+      <width>250</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Execute Sorting</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="AlgorithmSelection">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>105</y>
+      <width>171</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="NumberSelection">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>175</y>
+      <width>161</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="YesSelectionDuplicates">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>250</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Yes</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="NoSelectionDuplicates">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>250</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>No</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1102</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSorting">
+    <property name="title">
+     <string>Sorting</string>
+    </property>
+    <addaction name="actionSet_of_Numbers"/>
+    <addaction name="actionImages"/>
+   </widget>
+   <widget class="QMenu" name="menuSearching">
+    <property name="title">
+     <string>Searching</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAlgorithms_Explanations">
+    <property name="title">
+     <string>Algorithms' Explanations</string>
+    </property>
+    <addaction name="actionSorting"/>
+    <addaction name="actionSearching"/>
+   </widget>
+   <addaction name="menuSorting"/>
+   <addaction name="menuSearching"/>
+   <addaction name="menuAlgorithms_Explanations"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSorting">
+   <property name="text">
+    <string>Sorting</string>
+   </property>
+  </action>
+  <action name="actionSearching">
+   <property name="text">
+    <string>Searching</string>
+   </property>
+  </action>
+  <action name="actionSet_of_Numbers">
+   <property name="text">
+    <string>Set of Numbers</string>
+   </property>
+  </action>
+  <action name="actionImages">
+   <property name="text">
+    <string>Images</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
