@@ -51,9 +51,6 @@ def mergeSort(numbers):
         
         print(numbers)
 
-def timSort(numbers):
-    pass
-
 def heapSort(numbers):
     pass
 
@@ -71,7 +68,17 @@ def insertionSort(numbers):
             index -= 1
 
 def selectionSort(numbers):
-    pass
+    minimum = 0
+    for index in range(1, len(numbers)):
+        if numbers[minimum] > numbers[index]:
+            minimum = index
+    numbers[0], numbers[minimum] = numbers[minimum], numbers[0]
+    for index in range(1, len(numbers)):
+        minimumm=index
+        for second_index in range(index+1, len(numbers)):
+            if numbers[minimumm] > numbers[second_index]:
+                minimumm = second_index
+        numbers[index], numbers[minimumm] = numbers[minimumm], numbers[index]
 
 def treeSort(numbers):
     pass
@@ -82,4 +89,5 @@ numberst = [3,2,5,7,4]
 #mergeSort(numbers)
 #insertionSort(numberst)
 #bubbleSort(numberst)
-print(numbers)
+selectionSort(numberst)
+print(numberst)
