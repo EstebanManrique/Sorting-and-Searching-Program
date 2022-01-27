@@ -1,3 +1,4 @@
+#QUICKSORT
 def quickSort(numbers, left_index, right_index): #First and last index when calling from UI
     if left_index < right_index:
         pivot = partition(numbers, left_index, right_index) #Get the pivot for the numbers being checked
@@ -18,6 +19,7 @@ def partition(numbers, left_index, right_index):
     numbers[i], numbers[right_index] = numbers[right_index], numbers[i]
     return(i)
 
+#MERGESORT
 def mergeSort(numbers):
     if len(numbers) > 1:
         left_side = numbers[0:(len(numbers)//2)]
@@ -48,18 +50,50 @@ def mergeSort(numbers):
             numbers[merge_index] = right_side[right_index]
             right_index += 1
             merge_index += 1
-        
-        print(numbers)
+
+#HEAP SORT
+def swap(numbers, index, index_two):
+    numbers[index], numbers[index_two] = numbers[index_two], numbers[index]
+
+def modifyingHeap(numbers, index, upper_level):
+    while True:
+        left_child, right_child = (index * 2) + 1, (index * 2) + 2
+        if max(left_child, right_child) < upper_level:
+            if numbers[index] >= max(numbers[left_child], numbers[right_child]): break
+            elif numbers[left_child] > numbers[index]:
+                swap(numbers,index,left_child)
+                index = left_child
+            else:
+                swap(numbers,index,right_child)
+                index = right_child
+        elif left_child < upper_level:
+            if numbers[left_child] > numbers[index]:
+                swap(numbers,index,left_child)
+                index = left_child
+            else: break
+        elif right_child < upper_level:
+            if numbers[right_child] > numbers[index]:
+                swap(numbers,index,right_child)
+                index = right_child
+            else: break
+        else: break
 
 def heapSort(numbers):
-    pass
+    for index in range((len(numbers) // 2), -1, -1):
+        modifyingHeap(numbers, index, len(numbers))
 
+    for index in range(len(numbers) - 1, 0, -1):
+        swap(numbers,0,index)
+        modifyingHeap(numbers,0,index)
+
+#BUBBLE SORT
 def bubbleSort(numbers):
     for index in range (0, len(numbers)-1):
         for second_index in range (index+1, len(numbers)):
             if numbers[index] > numbers[second_index]:
                 numbers[index], numbers[second_index] = numbers[second_index], numbers[index]
 
+#INSERTION SORT
 def insertionSort(numbers):
     to_sort = range(1, len(numbers))
     for index in to_sort:
@@ -67,6 +101,7 @@ def insertionSort(numbers):
             numbers[index-1], numbers[index] = numbers[index], numbers[index-1]
             index -= 1
 
+#SELECTION SORT
 def selectionSort(numbers):
     minimum = 0
     for index in range(1, len(numbers)):
@@ -80,6 +115,7 @@ def selectionSort(numbers):
                 minimumm = second_index
         numbers[index], numbers[minimumm] = numbers[minimumm], numbers[index]
 
+#TREE SORT
 def treeSort(numbers):
     pass
 
@@ -89,5 +125,6 @@ numberst = [3,2,5,7,4]
 #mergeSort(numbers)
 #insertionSort(numberst)
 #bubbleSort(numberst)
-selectionSort(numberst)
-print(numberst)
+#selectionSort(numberst)
+heapSort(numbers)
+print(numbers)
